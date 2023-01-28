@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+    Employer Home
+
+{% endblock title %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/shome.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+
+{% block navbar %}
+{% endblock navbar %}
+
+<header> 
+    <div class="headerHC">
+        <div class="boxedHC">
+          <h1>On Campus Jobs for Employers</h1>
+        </div>
+      </div>
+  </header>
+  <body>
+    <div class="boxHC">
+        <div class="boxed1">
+          <a href="{% url 'allJobs' %}"><button type="jobsApplied" class = "button1">All Jobs Posted by You</button></a>
+        </div>
+    
+        <div class="boxed1"> 
+              <a href="{% url 'createJob' %}"><button type="jobsInterest" class = "button1">Add a Job</button></a><br>
+        </div>
+    </div>
+         
+    {% comment %} <div class="boxHC">
+        <div class="boxed1">
+              <a href="{% url 'editJob'  %}"><button type="jobsApplied" class = "button1">Edit a Job</button></a>
+        </div>
+    
+        <div class="boxed1">
+            <a href="{% url 'jobs_list' %}"><button type="findJobs" class = "button1">Delete a Job</button></a>
+        </div>
+    </div> {% endcomment %}
+
+    <a href="{% url 'student_logout' %}"><button>Logout</button></a>
+
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="{% static 'css/createjob.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+
+<header> 
+  <div class="headerHC">
+    <div class="boxedHC">
+      <h1>On Campus Jobs</h1>
+    </div>
+  </div>
+
+  
+</header>
+  
+<body>
+  <form action="" method="POST">
+      {% csrf_token %}
+  <div class="container">
+    <h1>Create Job</h1>
+    <hr>
+
+    <label for="name"><b>Position</b></label>
+    <input type="name" placeholder="Enter Job Position" name="name" id="name" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="description" placeholder="Enter Description" name="description" id="description" required>
+
+    <label for="depart"><b>Department</b></label>
+    <input type="depart" placeholder="Enter Department" name="department" id="depart" required><br>
+
+    <label for="deadline"><b>Deadline</b></label>
+    <input type="date" placeholder="Enter Deadline" name="deadline" id="deadline" required><br><br>
+
+    <label for="location"><b>Location</b></label>
+    <input type="location" placeholder="Enter Location" name="location" id="location" required><br>
+
+    <label for="inter"><b>International?</b></label>
+    <input type="inter" placeholder="Enter Yes or No" name="international" id="inter" required><br>
+
+    <label for="require"><b>Requirements</b></label>
+    <input type="require" placeholder="Enter Requirements" name="eligibility" id="require" required><br>
+
+     <label for="major"><b>Major</b></label>
+    <input type="major" placeholder="Enter Major" name="major" id="major" required><br>
+    
+    <hr>
+    
+    <button type="submit" class="postbtn">Post Job</button><br>
+
+  </div>
+
+
+</form>
+  <script src="script.js"></script>
+</body>
+
+</html>

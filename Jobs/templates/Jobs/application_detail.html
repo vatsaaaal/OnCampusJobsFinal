@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ application.job }}
+{% endblock title %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Your application for <a href="{% url 'detail' application.job.id %}" style="text-decoration: none !important;">{{ application.job }}</a></h2>
+            <hr>
+            <h6>Name</h6>
+            <p>{{ application.name }}</p>
+            <h6>Email</h6>
+            <p>{{ application.email }}</p>
+            <h6>Major</h6>
+            <p>{{ application.major }}</p>
+            <h6>What year student are you?</h6>
+            <p>{{ application.year }}</p>
+            <h6>Why do you think you're a good fit for this position?</h6>
+            <p>{{ application.fit }}</p>
+            <h6><a href="{{ application.resume }}">Resume</a></h6>
+        </div>
+    </div>
+{% endblock content %}
+

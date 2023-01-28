@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="center">
+    <div class="boxed">
+      <div>
+        <form method="POST" action="">
+          {% csrf_token %}
+          <label for="login"><b>Create Account</b></label><br>
+          <div class="checkParent">
+            <input class="employerCheck" type="checkbox" name="employer">
+            <label for="employer"><strong>Are you an Employer?</strong></label>
+          </div>
+          <label style="display: none;" for="InputUsername" class="form-label">{{ form.username.label }}</label>
+          <input class="form-control" type="text" placeholder="Enter Username" name="username" required>
+          <label style="display: none;" for="InputEmail">{{ form.email.label }}</label>
+          <input class="form-control" type="email" placeholder="Enter Email" name="email" required>
+          <label style="display: none;" for="Password1">{{ form.password1.label }}</label>
+          <input class="form-control" type="password" placeholder="Enter Password" name="password1" required>
+          <label style="display: none;" for="Password2">{{ form.password2.label }}</label>
+          <input class="form-control" type="password" placeholder="Password Confirmation" name="password2" required><br>
+          <button style="margin-top: 5px;" type="register">Register</button><br>
+          <label style="margin-top: 5px;" for="have account">Already have an account?</b></label>
+          <a href="{% url 'student_login' %}">Log in</a><br>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

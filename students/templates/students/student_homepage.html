@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+    Student Home
+
+{% endblock title %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/shome.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+
+{% block navbar %}
+{% endblock navbar %}
+
+<header> 
+    <div class="headerHC">
+        <div class="boxedHC">
+          <h1>On Campus Jobs</h1>
+        </div>
+      </div>
+  </header>
+  <body>
+    <div class="boxHC">
+        <div class="boxed1">
+          <a href="{% url 'applications' %}"><button type="jobsApplied" class = "button1">My Applications</button></a>
+        </div>
+    
+        <div class="boxed1"> 
+              <button type="jobsInterest" class = "button1">Jobs that may interest me</button><br>
+        </div>
+    </div>
+         
+    <div class="boxHC">
+        <div class="boxed1">
+              <button type="jobsApplied" class = "button1">Jobs I have applied to</button>
+        </div>
+    
+        <div class="boxed1">
+            <a href="{% url 'jobs_list' %}"><button type="findJobs" class = "button1">Find Jobs</button></a>
+        </div>
+    </div>
+    <a href="{% url 'student_logout' %}"><button>Logout</button></a>
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search Results
+{% endblock title %}
+
+{% block content %}
+    <div style="background-color: transparent !important;" class="jumbotron">
+        <div class="container">
+            {% if match %}
+                <table class = "table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Department</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                {% csrf_token %} {% for job in match.all %}
+                        <tr>
+                            <td><a href="{% url 'detail' job.id %}">{{ job.name }}</a></td>
+                            <td>{{ job.short_desc }}...</td>
+                            <td>{{ job.department }}</td>
+                            <td>{{ job.deadline }}</td>
+                        </tr>
+                {% endfor %}
+                </table>
+            {% else %}
+                <p>{{ error }}</p>
+            {% endif %}
+            
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Your Jobs</title>
+  <link href="{% static 'css/allapp.css' %}" rel="stylesheet" type="text/css"/>
+  
+</head>
+
+<header> 
+  <div class="headerHC">
+    <div class="boxedHC">
+      <h1>On Campus Jobs</h1>
+    </div>
+  </div>
+  <div class ="box">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{% url 'employerHomepage' %}">Home</a>
+    <a href="{% url 'jobs_list' %}">Find Jobs</a>
+    <a href="{% url 'applications' %}">Your Applications</a>
+  </div>
+  
+</header>
+  
+<body>
+  
+<h2>Jobs Posted by You</h2>   
+
+<table class = "content-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th> 
+      <th>Department</th>
+      <th>Deadline</th>
+      <th>Submitted Applications</th>
+    </tr>
+  </thead> 
+  <tbody>  
+    {% for job in jobs %}
+    <tr>
+        <td><a href="{% url 'detail' job.id %}">{{ job.name }}</a></td>
+        <td>{{ job.short_desc }}...</td>
+        <td>{{ job.department }}</td>
+        <td>{{ job.deadline }}</td>
+        <td><a href="{% url 'applicantList' job.id %}">View</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  
+</body>
+
+</html>

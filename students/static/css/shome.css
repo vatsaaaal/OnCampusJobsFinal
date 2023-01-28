@@ -1,0 +1,55 @@
+.headerHC {
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255, 242, 55, 0.493), rgba(142, 162, 253, 0.73)), url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.6435-9/102959820_3639546122727005_2229302548758205527_n.jpg?stp=dst-jpg_p320x320&_nc_cat=105&ccb=1-5&_nc_sid=e3f864&_nc_ohc=hnFEpTcVhxQAX-zVYkM&_nc_oc=AQkQis-k2FZAzSlMi5dDrsYtnKdbWOxl6faM8tYgQ3PXWxPHl-IJUykmOBiFy-Mjcvc&_nc_ht=scontent-lga3-1.xx&oh=00_AT-_KvLgwH20l8SJtxLdFotU9PyicGf1MvPZJC20amxw-Q&oe=62733264);
+    color: black;
+    height: 310px;
+    font-size: 30px;
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+.headerHC h1 {
+    justify-content: center;
+    align-items: center;
+    background-color: transparent !important;
+    font-weight: 900px;
+    letter-spacing: 2px;
+    font-size: 50px;
+    word-spacing: 5px;
+}
+  
+  .boxedHC {
+    color: white;
+    margin: auto;
+    width: 36%;
+    padding: 0.1%;
+    border-radius: 4%;
+  }
+  
+  .button1 {
+    background-color: rgb(255,215,0);
+    color: black;
+    padding: 14px 20px;
+    margin: 20px 0px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 30px;
+  }
+  
+  .boxed1 {
+    background-color: rgb(255,215,0);
+    padding: 14px 20px;
+    margin: 20px 0px;
+    width: 30%;
+    border-radius: 2%;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  
+  .boxHC {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 40px;
+  }
